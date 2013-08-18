@@ -17,7 +17,7 @@ Group :development, :test do
 	gem 'sqlite3'
 end
 
-Group :Production do
+Group :production do
 	gem 'pg'
 end
 
@@ -35,7 +35,7 @@ end
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-group :doc do
+Group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
