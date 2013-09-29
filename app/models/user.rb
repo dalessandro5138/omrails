@@ -3,10 +3,11 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   
+ 	attr_accessible :email, :password, :password_confirmation, :remember_me, :provider, :uid, :as => [:default, :admin]
+
   devise :database_authenticatable, :registerable, #:recoverable, 
          :rememberable, :trackable, :validatable
 
-	attr_accessible :email, :password, :password_confirmation, :remember_me, :name
 	has_many :pins
 
 end
