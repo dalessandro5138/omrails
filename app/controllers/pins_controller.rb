@@ -16,7 +16,7 @@ class PinsController < ApplicationController
 
   # GET /pins/new
   def new
-    @pin.new(pin_params)
+    @pin = current_user.pins.new(pin_params)
   end
 
   # GET /pins/1/edit
@@ -27,7 +27,7 @@ class PinsController < ApplicationController
   # POST /pins
   # POST /pins.json
   def create
-    @pin.new(pin_params)
+    @pin = current_user.pins.new(pin_params)
 
     respond_to do |format|
       if @pin.save
