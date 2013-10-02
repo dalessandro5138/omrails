@@ -16,12 +16,12 @@ class PinsController < ApplicationController
 
   # GET /pins/new
   def new
-    @pin = current_user.pins.new(pin_params)
+    @pin = current_user.pins.new
   end
 
   # GET /pins/1/edit
   def edit
-    @pin
+    @pin = set_pin
   end
 
   # POST /pins
@@ -43,7 +43,7 @@ class PinsController < ApplicationController
   # PATCH/PUT /pins/1
   # PATCH/PUT /pins/1.json
   def update
-    @pin
+    @pin = set_pin
     respond_to do |format|
       if @pin.update(pin_params)
         format.html { redirect_to @pin, notice: 'Pin was successfully updated.' }
