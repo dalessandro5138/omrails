@@ -16,18 +16,18 @@ class PinsController < ApplicationController
 
   # GET /pins/new
   def new
-    @pin = current_user.pins.new
+    @pin.new(pin_params)
   end
 
   # GET /pins/1/edit
   def edit
-    @pin = current_user.pins.find(params[:id])
+    @pin
   end
 
   # POST /pins
   # POST /pins.json
   def create
-    @pin = current_user.pins.new(params[:pin])
+    @pin.new(pin_params)
 
     respond_to do |format|
       if @pin.save
@@ -43,9 +43,9 @@ class PinsController < ApplicationController
   # PATCH/PUT /pins/1
   # PATCH/PUT /pins/1.json
   def update
-    @pin = current_user.pins.find(params[:id])
+    @pin
     respond_to do |format|
-      if @pin.update(params[:pin])
+      if @pin.update(pin_params)
         format.html { redirect_to @pin, notice: 'Pin was successfully updated.' }
         format.json { head :no_content }
       else
@@ -58,7 +58,7 @@ class PinsController < ApplicationController
   # DELETE /pins/1
   # DELETE /pins/1.json
   def destroy
-    @pin = current_user.pins.find(params[:id])
+    @pin
     @pin.destroy
     respond_to do |format|
       format.html { redirect_to pins_url }

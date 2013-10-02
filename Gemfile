@@ -6,7 +6,7 @@ gem 'rails', '4.0.0'
 gem 'bootstrap-sass'
 gem 'devise' , '~> 3.0.0.rc' 
 gem 'simple_form', '~> 3.0.0.rc'
-gem 'protected_attributes'
+#gem 'protected_attributes'
 gem 'paperclip', github: 'thoughtbot/paperclip', branch: 'rails-4'
 gem 'faker'
 
