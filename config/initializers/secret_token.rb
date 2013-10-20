@@ -13,7 +13,7 @@
 require 'securerandom'
 
 def secure_token
-	token_file = rails.root.join('.secret')
+	token_file = Rails.root.join('.secret')
 	if File.exist?(token_file)
 		File.read(token_file).chomp
 	else
@@ -24,4 +24,4 @@ def secure_token
 end
 
 
-Omrails::Application.config.secret_token = secure_token
+Omrails::Application.config.secret_key_base = secure_token
