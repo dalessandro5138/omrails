@@ -19,8 +19,9 @@ def secure_token
 	else
 		token = SecureRandom.hex(64)
 		File.write(token_file, token)
+		token
 	end
 end
 
 
-Omrails::Application.config.secret_key_base = secure_token
+Omrails::Application.config.secret_token = secure_token
